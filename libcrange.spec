@@ -9,8 +9,8 @@ URL:        http://github.com/boinger/libcrange
 Source:    %{name}-latest.tar.gz
 BuildRoot:  %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
-BuildRequires: autoconf, automake, apr-devel, libtool, libyaml, libyaml-devel, pcre-devel, perl-devel, sqlite-devel, perl-ExtUtils-Embed
-Requires: apr, flex, libyaml, pcre, perl, perl-YAML-Syck, perl-core, perl-libs, sqlite
+BuildRequires: autoconf, automake, apr-devel, flex, libtool, libyaml, libyaml-devel, pcre-devel, perl-devel, sqlite-devel, perl-ExtUtils-Embed
+Requires: apr, libyaml, pcre, perl, perl-YAML-Syck, perl-core, perl-libs, sqlite
 
 
 %description
