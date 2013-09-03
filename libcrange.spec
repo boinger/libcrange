@@ -3,13 +3,13 @@ Version:  1.0.2
 Release:  1%{?dist}
 Summary:  C version of range
 
-Group:      Base
+Group:      System Environment/Libraries
 License:    GPL
 URL:        http://github.com/boinger/libcrange
-Source0:    %{name}-latest.tar.gz
+Source:    %{name}-latest.tar.gz
 BuildRoot:  %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
-BuildRequires: apr-devel, libyaml-devel, pcre-devel, perl-devel, sqlite-devel
+BuildRequires: autoconf, automake, apr-devel, libtool, libyaml, libyaml-devel, pcre-devel, perl-devel, sqlite-devel, perl-ExtUtils-Embed
 Requires: apr, flex, libyaml, pcre, perl, perl-YAML-Syck, perl-core, perl-libs, sqlite
 
 
