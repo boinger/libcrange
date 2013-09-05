@@ -9,7 +9,7 @@ URL:        http://github.com/boinger/libcrange
 Source:    %{name}-latest.tar.gz
 BuildRoot:  %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 
-BuildRequires: autoconf, automake, apr-devel, flex, libtool, libyaml, libyaml-devel, pcre-devel, perl-devel, sqlite-devel, perl-ExtUtils-Embed
+BuildRequires: autoconf, automake, apr-devel, bison, flex, libtool, libyaml, libyaml-devel, pcre-devel, perl-devel, sqlite-devel, perl-ExtUtils-Embed
 Requires: apr, libyaml, pcre, perl, perl-YAML-Syck, perl-core, perl-libs, sqlite
 
 
@@ -22,11 +22,12 @@ A library for parsing and generating range expressions.
 
 
 %build
-aclocal || exit 1
-libtoolize --force || exit 1
-autoheader || exit 1
-automake -a || exit 1
-autoconf || exit 1
+aclocal
+libtoolize --force
+autoheader
+automake -a
+autoconf
+export LDFLAGS="-L%{buildroot}/src/.libs"
 %configure --prefix=/usr
 make %{?_smp_mflags}
 
