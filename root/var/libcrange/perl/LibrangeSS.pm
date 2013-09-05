@@ -5,7 +5,7 @@ sub functions_provided {
 }
 
 sub _get_seco_root {
-  my $SECO_ROOT = "/home/seco/tools/conf/";
+  my $SECO_ROOT = "/etc/range/conf/";
   return $SECO_ROOT;
 }
 

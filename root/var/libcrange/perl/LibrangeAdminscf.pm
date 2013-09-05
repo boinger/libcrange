@@ -11,7 +11,7 @@ sub functions_provided {
 sub _get_cf {
     my $rr = shift;
     my $path = Libcrange::get_var($rr, "nodescf_path");
-    $path ||= "/home/seco/tools/conf";
+    $path ||= "/etc/range/conf";
     my $file = "$path/admins.cf";
     unless (-r $file) {
         Libcrange::warn($rr, "$path/admins.cf not readable");
