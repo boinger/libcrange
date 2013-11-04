@@ -24,14 +24,14 @@ A library for parsing and generating range expressions. libcrange for modules to
   * foo1-2.domain.com == foo1.domain.com-foo2.domain.com # domain support
   * 209.131.40.1-209.131.40.255 == 209.131.40.1-255 # IP ranges
 
-
 ### Clusters:
 A cluster is a way to store node membership into groups. Depending on your backend module how this is stored may vary. In the case of the YAML module, a cluster is defined by the membership of the CLUSTER key
 
-  * %cluster101 == nodes defined in /var/range/cluster101.yaml - Default key CLUSTER
-  * %cluster101:ALL or %cluster101:FOO == nodes defined in a specific key of cluster101.yaml
-  * %%all == assuming %all is a list of clusters, the additional % will expand the list of clusters to node list that is their membership
-  * *node == returns the cluster(s) that node is a member of
+  * ```%cluster101``` == nodes defined in /var/range/cluster101.yaml - Default key CLUSTER
+  * ```%cluster101:FOO``` == nodes defined in a specific key of cluster101.yaml
+  * ```%%all``` == assuming %all is a list of clusters, the additional % will expand the list of clusters to node list that is their membership
+  * ```*node``` == returns the cluster(s) that node is a member of
+  * ```$FOO``` == echos the key FOO within the yaml file
 
 ### Operatons:
   * range1,range2  == union
